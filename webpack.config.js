@@ -42,7 +42,7 @@ module.exports = env => {
           use: 'file-loader?name=[name].[ext]'
         },
         {
-          test: /\.scc\ss$/,
+          test: /\.(css|scss|sass)$/i,
           use: [
             'style-loader',
             'css-loader',

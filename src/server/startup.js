@@ -12,7 +12,7 @@ var env = process.env.NODE_ENV;
 app.use(proxy(proxyConfig));
 app.use(bodyParser());
 app.use(mount("/scripts", serve(path.join(__dirname, "../../node_modules"))));
-app.use(mount("/images", serve(path.join(__dirname, "../../dist/node_modules"))));
+app.use(mount("/images", serve(path.join(__dirname, "../client/assets/images"))));
 
 var isDeveloping = env.trim() == 'Local';
 var staticPath;

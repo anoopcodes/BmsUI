@@ -1,25 +1,27 @@
+import 'bootstrap/scss/bootstrap.scss';
+import "../../node_modules/font-awesome/scss/font-awesome.scss";
+import "./assets/css/site.scss";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { connectedRouter } from 'react-router-redux';
-import { createHashHistory } from 'history';
+import { ConnectedRouter } from 'connected-react-router';
+import configureStore, {history} from './store/configureStore'
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-const baseUrl = document.getElementByTagName('base')[0].getAttribute('href');
-const history = createHistory({ baseName: baseUrl });
+const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 
 const initialState = window.initialReduxState;
-const store = configureStore(history, initialState);
+const store = configureStore(initialState);
 
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
     <Provider store={store}>
-        <connectedRouter history={history}>
+        <ConnectedRouter history={history}>
             <App />
-            </connectedRouter>
-    </Provider>,rootElement
-);
+        </ConnectedRouter>
+    </Provider>,
+    rootElement);
 
 registerServiceWorker();
