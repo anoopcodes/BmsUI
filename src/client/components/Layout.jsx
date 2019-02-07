@@ -12,8 +12,9 @@ export default props => (
       </div>
     </header>
     <div>
-    <NavMenu />
-    {props.children}
+      <h2 className="logoName">Analytics Dashboard</h2>
+      <NavMenu />
+      { props.children }
     </div>
     <footer></footer>
   </div>

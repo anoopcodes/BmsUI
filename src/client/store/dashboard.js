@@ -10,15 +10,15 @@ const initialState = {
 }
 
 export const actionCreators = {
-    requestDashboard: () => async (dispatch, getState) => {
-        if (getState().dashboard.content.length) {
+    requestDashboard: (pageNo) => async (dispatch, getState) => {
+        if (!pageNo && getState().dashboard.content.length) {
             return;
         }
         dispatch({
             type: requestDashboard
         });
-
-        const url = "bms/data";
+        pageNo = pageNo? pageNo-1 : 0;
+        const url = "bms/data?pageNo="+pageNo;
         const response = await fetch(url);
         const data = await response.json();
         dispatch({
@@ -41,6 +41,7 @@ export const reducer = (state, action) => {
         return {
             ...state,
             ...action,
+            number: action.number+1,
             isLoading: false
         };
     }

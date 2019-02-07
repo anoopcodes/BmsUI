@@ -31,11 +31,13 @@ if (isDeveloping) {
     app.use(serve(staticPath));
 }
 
-const port = isDeveloping ? 4321 : 80;
 
+var port = isDeveloping ? 4321 : 80;
+
+port = process.env.PORT || port;
 app.listen(port, "0.0.0.0", function onStart(err) {
     if (err) {
         console.log(err);
     }
-    console.info("Listening on 0.0.0.0:" + port);
+    console.info("Listening on 0.0.0.0:"+port);
 });

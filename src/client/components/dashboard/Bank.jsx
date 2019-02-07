@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Chart } from "chart.js"
+import { Link, NavLink } from 'react-router-dom';
 const bank = {
     bankId: "BANK02",
     batId: 2,
@@ -94,7 +95,12 @@ export class Bank extends Component {
     }
     render() {
         return (
-            <div className="bankChart">
+            <div className="bankChart container-fluid">
+            <div>
+                <NavLink to="/">Dashboard</NavLink>&nbsp;> &nbsp;
+                <NavLink to="/">BANK 02</NavLink>
+                
+            </div>
                 <div id="canvas-holder" className="tempChart">
                     <canvas id="chart-area"></canvas>
                 </div>

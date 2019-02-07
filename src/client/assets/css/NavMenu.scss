@@ -15,7 +15,6 @@
     /* On large screens, convert the nav menu to a vertical sidebar */
     .navbar {
         height: 100%;
-        width: calc(25% - 20px);
     }
     .navbar {
         border-radius: 0;
@@ -26,7 +25,6 @@
         float: none;
     }
     .navbar .navbar-collapse {
-        border-top: 1px solid #444;
         padding: 0;
     }
     .navbar .container-fluid {
@@ -40,7 +38,7 @@
         float: none;
     }
     .navbar li {
-        float: none;
+        float: left;
         font-size: 15px;
         margin: 6px;
     }
