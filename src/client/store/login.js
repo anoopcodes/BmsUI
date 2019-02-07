@@ -6,7 +6,7 @@ const initialState = {
 
 export const actionCreators = {
     login: startDateIndex => async (dispatch, getState) => {
-    
+    debugger;
         dispatch({ type: requestLogin });
     
         const loginResponse = {success: true};

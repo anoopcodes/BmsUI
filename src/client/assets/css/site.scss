@@ -44,6 +44,7 @@ footer {
         color: #163233;
         font-weight: 600;
         font-size: 16px;
+
         :hover,
         :focus,
         :visited {
@@ -79,6 +80,7 @@ footer {
     margin-top: 10px;
     height: 75px;
     widows: 100%;
+    line-height: 75px;
 }
 
 .dashboard {
@@ -86,10 +88,69 @@ footer {
         background-color: #f3f3f3;
         padding: 0;
         width: 100%;
-    }
-    .row{
-        .head{
-            margin-top:5px;
+        position: relative;
+
+        .row {
+            .col-lg-2 {
+                padding: 0 15px;
+                line-height: 30px;
+
+                div:first-child {
+                    font-size: 10px;
+                    font-weight: 800;
+                }
+
+                div:last-child {
+                    font-size: 30px;
+                }
+
+            }
         }
+    }
+
+    .head {
+        .row {
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            margin-left: 16%;
+            height: 30px;
+            line-height: 45px;
+        }
+
+        hr {
+            width: 62%;
+            margin-left: 16%;
+        }
+    }
+
+    .content {
+        .row {
+            font-size: 12px;
+            margin-left: 16%;
+
+            a {
+                color: blue;
+            }
+        }
+
+        hr {
+            width: 62%;
+            margin-left: 16%;
+
+        }
+    }
+
+}
+.bankChart{
+
+    .tempChart {
+        width: 40%;
+        float: left;
+    }
+    .graphChart{
+        width: 60%;
+        float: left;
     }
 }

@@ -2,7 +2,10 @@
 {
     "proxy":{
         "targets": {
-            
+            "/bms/(.*)":{
+                "target":"http://bms01-env.nvkc85ppfy.ap-south-1.elasticbeanstalk.com",
+                "changeOrigin": true
+            }
         }
     }
 }
